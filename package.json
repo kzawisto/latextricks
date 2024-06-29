@@ -1,0 +1,94 @@
+{
+  "name": "latextricks",
+  "displayName": "latextricks",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "latextricks.replaceWithCitation",
+        "key": "ctrl+shift+1",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "latextricks.replaceWithFootnote",
+        "key": "ctrl+shift+2",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "latextricks.helloWorld",
+        "key": "ctrl+shift+3",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "latextricks.runPdfLatex",
+        "key": "ctrl+shift+4",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorTextFocus",
+          "command": "latextricks.replaceWithCitation",
+          "group": "inline"
+        },
+        {
+          "when": "editorTextFocus",
+          "command": "latextricks.replaceWithFootnote",
+          "group": "inline"
+        },
+        {
+          "when": "editorTextFocus",
+          "command": "latextricks.helloWorld",
+          "group": "inline"
+        },
+        {
+          "when": "editorTextFocus",
+          "command": "latextricks.runPdfLatex",
+          "group": "inline"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "latextricks.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "latextricks.replaceWithCitation",
+        "title": "LatexTricks: Replace with LaTeX Citation"
+      },
+      {
+        "command": "latextricks.replaceWithFootnote",
+        "title": "LatexTricks: Replace with LaTeX Footnote"
+      },
+      {
+        "command": "latextricks.runPdfLatex",
+        "title": "LatexTricks: Run PdfLatex"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
